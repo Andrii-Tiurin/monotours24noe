@@ -16,6 +16,15 @@
       <img src="/public/assets/hero-germany.jpg" alt="Familie auf Reise in Deutschland" />
     </div>
   </div>
+  <div class="container search-wrap" id="search">
+    <form class="search-bar" onsubmit="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      <input type="text" placeholder="Wohin? (z. B. Türkei)" required>
+      <input type="date" required>
+      <select><option>7–9 Nächte</option></select>
+      <select><option>2 Erwachsene</option></select>
+      <button class="btn" type="submit">Suchen</button>
+    </form>
+  </div>
 </header>
 <main class="main-light">
   <section class="container section" id="hot"><h2>🔥 Heiße Touren</h2><div id="hotTours" class="hot-grid"></div></section>
