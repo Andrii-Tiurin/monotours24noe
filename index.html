@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monotours24 — Buntes Reiseportal</title>
-  <meta name="description" content="Helle, moderne Reiseplattform von Monotours24: heiße Touren, beliebte Länder und schnelle Anfrage." />
+  <meta name="description" content="Monotours24 Reiseportal" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
 </head>
 <body>
   <div class="topline">☀️ Monotours24 — Sonne, Meer, Urlaub!</div>
-
   <header class="hero-header">
     <div class="container nav">
       <a class="logo" href="index.html">Monotours24</a>
@@ -29,39 +28,25 @@
       <div>
         <h1>Alle Reisen<br>an einem Ort</h1>
         <p>Finde in Minuten die passende Reise — von Last-Minute bis Premium-Urlaub. Schnell, transparent und persönlich begleitet.</p>
-        <div class="tabs">
-          <span class="active">Tours</span>
-          <span>Excursions</span>
-          <span>World</span>
-        </div>
       </div>
-      <div class="hero-illu" aria-hidden="true">🌴✈️🏖️</div>
+      <div class="hero-illu"><img src="public/assets/hero-germany.jpg" alt="Familie auf Reise"></div>
     </div>
 
     <div class="container search-wrap" id="search">
-      <form class="search-bar" onsubmit="return fakeSearch(event)">
+      <form class="search-bar" onsubmit="event.preventDefault();alert('Anfrage gesendet!');">
         <input type="text" placeholder="Wohin? (z. B. Türkei)" required>
         <input type="date" required>
-        <select><option>7–9 Nächte</option><option>5–7 Nächte</option><option>10–14 Nächte</option></select>
-        <select><option>2 Erwachsene</option><option>1 Erwachsene</option><option>Familie</option></select>
+        <select><option>7–9 Nächte</option></select>
+        <select><option>2 Erwachsene</option></select>
         <button class="btn" type="submit">Suchen</button>
       </form>
-      <p id="searchMsg" class="muted-light"></p>
     </div>
   </header>
 
   <main class="main-light">
     <section class="container promo-grid">
-      <article class="promo-card blue">
-        <h3>Garantierte Touren</h3>
-        <p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p>
-        <a href="tours.html">Mehr sehen →</a>
-      </article>
-      <article class="promo-card sky">
-        <h3>Ausflüge</h3>
-        <p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p>
-        <a href="tours.html">Kategorie öffnen →</a>
-      </article>
+      <article class="promo-card blue"><h3>Garantierte Touren</h3><p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p></article>
+      <article class="promo-card sky"><h3>Ausflüge</h3><p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p></article>
     </section>
 
     <section id="hot" class="container section">
@@ -75,49 +60,33 @@
     </section>
 
     <section id="newsletter" class="container newsletter section">
-      <div>
-        <h3>Newsletter für Hot Deals</h3>
-        <p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p>
-      </div>
-      <form onsubmit="return subscribe(event)">
+      <div><h3>Newsletter für Hot Deals</h3><p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p></div>
+      <form onsubmit="event.preventDefault();alert('Danke für die Anmeldung!');">
         <input type="email" placeholder="deine@email.de" required>
         <button class="btn" type="submit">Anmelden</button>
       </form>
-      <p id="newsMsg" class="muted"></p>
     </section>
 
     <section id="countries" class="container section">
-      <div class="section-head"><h2>Beliebte Länder</h2><a href="tours.html">Alle Länder →</a></div>
+      <div class="section-head"><h2>Beliebte Länder</h2></div>
       <div class="countries">
-        <a class="country lg egypt" href="tours.html"><b>Ägypten</b><small>ab 399 €</small></a>
-        <a class="country lg turkey" href="tours.html"><b>Türkei</b><small>ab 349 €</small></a>
-        <a class="country uae" href="tours.html"><b>VAE</b><small>ab 699 €</small></a>
-        <a class="country spain" href="tours.html"><b>Spanien</b><small>ab 529 €</small></a>
-        <a class="country thai" href="tours.html"><b>Thailand</b><small>ab 999 €</small></a>
-        <a class="country maldives" href="tours.html"><b>Malediven</b><small>ab 1.290 €</small></a>
+        <a class="country egypt" href="#"><b>Ägypten</b><small>ab 399 €</small></a>
+        <a class="country turkey" href="#"><b>Türkei</b><small>ab 349 €</small></a>
+        <a class="country uae" href="#"><b>VAE</b><small>ab 699 €</small></a>
+        <a class="country spain" href="#"><b>Spanien</b><small>ab 529 €</small></a>
+        <a class="country thai" href="#"><b>Thailand</b><small>ab 999 €</small></a>
+        <a class="country maldives" href="#"><b>Malediven</b><small>ab 1.290 €</small></a>
       </div>
     </section>
   </main>
 
   <footer class="footer-light">
     <div class="container foot-grid">
-      <div>
-        <div class="logo dark">Monotours24</div>
-        <p>Online-Reisebüro in Deutschland.</p>
-      </div>
-      <div>
-        <a href="tours.html">Touren</a>
-        <a href="about.html">Über uns</a>
-        <a href="contact.html">Kontakt</a>
-      </div>
-      <div>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </div>
+      <div><div class="logo dark">Monotours24</div><p>Online-Reisebüro in Deutschland.</p></div>
+      <div><a href="tours.html">Touren</a><a href="about.html">Über uns</a><a href="contact.html">Kontakt</a></div>
+      <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
     </div>
-    <div class="container copy">© <span id="year"></span> Monotours24</div>
+    <div class="container copy">© 2026 Monotours24</div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
