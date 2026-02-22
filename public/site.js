@@ -20,8 +20,20 @@ async function load() {
   const menu = document.getElementById('menu');
   menu.innerHTML = data.menu.map(i => `<a href="${i.href}">${i.label}</a>`).join('');
 
-  document.getElementById('hotTours').innerHTML = (data.hotTours || []).map((t, i) =>
-    `<article class="hot card${(i%4)+1}"><span>${t.rating || '-'}</span><h4>${t.title}</h4><p>${t.details}</p><strong>${t.price}</strong></article>`
+  document.getElementById('hotTours').innerHTML = (data.hotTours || []).map((t) =>
+    `<article class="tour-card">
+      <img src="${t.image || 'https://picsum.photos/seed/tour/560/320'}" alt="${t.title || 'Tour'}">
+      <div class="tour-body">
+        <div class="tour-top"><span class="stars">${t.stars || '4★'}</span><span class="score">${t.rating || '-'}</span></div>
+        <h4>${t.title || ''}</h4>
+        <ul>
+          <li>📍 ${t.location || ''}</li>
+          <li>📅 ${t.details || ''}${t.date ? ' • ' + t.date : ''}</li>
+          <li>🍽️ ${t.meal || ''}</li>
+        </ul>
+        <div class="price">${t.price || ''} <small>für 2 Erwachsene</small></div>
+      </div>
+    </article>`
   ).join('');
 
   document.getElementById('countriesGrid').innerHTML = (data.countries || []).map((c, i) =>

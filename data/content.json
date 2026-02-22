@@ -23,10 +23,50 @@
     "notifyEmail": "monotours24@gmail.com"
   },
   "hotTours": [
-    {"title": "Türkei, Kemer", "details": "7 Nächte • All Inclusive", "price": "ab 899 €", "rating": "8.9"},
-    {"title": "Ägypten, Sharm", "details": "7 Nächte • Flug inkl.", "price": "ab 949 €", "rating": "8.7"},
-    {"title": "Dubai, VAE", "details": "7 Nächte • Frühstück", "price": "ab 1.190 €", "rating": "8.3"},
-    {"title": "Thailand, Pattaya", "details": "8 Nächte • Flug inkl.", "price": "ab 1.690 €", "rating": "8.6"}
+    {
+      "title": "Frühbucher: Türkei, Kemer",
+      "location": "Kemer, Antalya",
+      "details": "7 Nächte • All Inclusive",
+      "date": "ab 12. Mai",
+      "meal": "All Inclusive",
+      "price": "ab 899 €",
+      "rating": "8.9",
+      "stars": "5★",
+      "image": "https://picsum.photos/seed/kemer/560/320"
+    },
+    {
+      "title": "All Inclusive in Sharm El Sheikh",
+      "location": "Ägypten, Sharm El Sheikh",
+      "details": "7 Nächte • Flug inkl.",
+      "date": "ab 9. März",
+      "meal": "All Inclusive",
+      "price": "ab 949 €",
+      "rating": "8.7",
+      "stars": "5★",
+      "image": "https://picsum.photos/seed/sharm/560/320"
+    },
+    {
+      "title": "City-Trip: Dubai, VAE",
+      "location": "Dubai, Vereinigte Arabische Emirate",
+      "details": "7 Nächte • Frühstück",
+      "date": "ab 8. März",
+      "meal": "Frühstück",
+      "price": "ab 1.190 €",
+      "rating": "8.3",
+      "stars": "4★",
+      "image": "https://picsum.photos/seed/dubai/560/320"
+    },
+    {
+      "title": "Tropenurlaub: Pattaya",
+      "location": "Thailand, Pattaya",
+      "details": "8 Nächte • Flug inkl.",
+      "date": "ab 24. Februar",
+      "meal": "Frühstück",
+      "price": "ab 1.690 €",
+      "rating": "8.6",
+      "stars": "4★",
+      "image": "https://picsum.photos/seed/pattaya/560/320"
+    }
   ],
   "countries": [
     {"name": "Ägypten", "price": "ab 399 €"},
