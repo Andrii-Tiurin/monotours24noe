@@ -5,7 +5,13 @@
 </head>
 <body class="admin-page">
 <main class="container admin-wrap">
-  <h1>Admin Panel</h1>
+  <div class="admin-topbar">
+    <h1>Monotours24 Admin</h1>
+    <div class="rowBtns">
+      <a class="btn btn-white" href="/" target="_blank">↗ Website öffnen</a>
+      <button class="btn btn-white" onclick="reloadSite()">🔄 Neu laden</button>
+    </div>
+  </div>
 
   <section id="loginBox" class="card admin-card">
     <h3>Login</h3>
@@ -19,52 +25,80 @@
     <p id="loginMsg"></p>
   </section>
 
-  <section id="panel" class="card admin-card" style="display:none">
-    <h3>Website Content</h3>
+  <section id="panel" class="admin-layout" style="display:none">
+    <aside class="admin-sidebar card">
+      <button class="tab active" data-tab="general">Allgemein</button>
+      <button class="tab" data-tab="content">Content</button>
+      <button class="tab" data-tab="marketing">Marketing</button>
+      <button class="tab" data-tab="email">E-Mail / SMTP</button>
+      <button class="tab" data-tab="security">Sicherheit</button>
+      <button class="tab" data-tab="actions">Aktionen</button>
+    </aside>
 
-    <h4>Allgemein</h4>
-    <div class="admin-grid cols-4">
-      <label>Site Name <input id="siteName"></label>
-      <label>Tagline <input id="tagline"></label>
-      <label>Logo Text <input id="logoText"></label>
-      <label>Favicon Emoji/Text <input id="favicon"></label>
-    </div>
+    <section class="card admin-main">
+      <div class="tab-pane active" id="tab-general">
+        <h3>Allgemeine Einstellungen</h3>
+        <div class="admin-grid cols-4">
+          <label>Site Name <input id="siteName"></label>
+          <label>Tagline <input id="tagline"></label>
+          <label>Logo Text <input id="logoText"></label>
+          <label>Favicon Emoji/Text <input id="favicon"></label>
+        </div>
+      </div>
 
-    <h4>Kontakte</h4>
-    <div class="admin-grid cols-4">
-      <label>Kontakt E-Mail <input id="email"></label>
-      <label>Telefon <input id="phone"></label>
-      <label>Instagram URL <input id="insta"></label>
-      <label>Notify E-Mail <input id="notify"></label>
-    </div>
+      <div class="tab-pane" id="tab-content">
+        <h3>Website Content</h3>
+        <div class="admin-grid cols-4">
+          <label>Kontakt E-Mail <input id="email"></label>
+          <label>Telefon <input id="phone"></label>
+          <label>Instagram URL <input id="insta"></label>
+          <label>Notify E-Mail <input id="notify"></label>
+        </div>
+        <h4>Hot Tours (JSON)</h4>
+        <textarea id="hotTours" class="json-area" rows="10"></textarea>
+        <h4>Countries (JSON)</h4>
+        <textarea id="countries" class="json-area" rows="10"></textarea>
+        <h4>Articles (JSON)</h4>
+        <textarea id="articles" class="json-area" rows="10"></textarea>
+      </div>
 
-    <h4>Hot Tours (JSON)</h4>
-    <textarea id="hotTours" class="json-area" rows="10"></textarea>
+      <div class="tab-pane" id="tab-marketing">
+        <h3>Footer / Branding</h3>
+        <label>Footer copy <input id="copy"></label>
+      </div>
 
-    <h4>Countries (JSON)</h4>
-    <textarea id="countries" class="json-area" rows="10"></textarea>
+      <div class="tab-pane" id="tab-email">
+        <h3>SMTP (Lead Benachrichtigungen)</h3>
+        <div class="admin-grid cols-5">
+          <label>Host <input id="smtpHost"></label>
+          <label>Port <input id="smtpPort"></label>
+          <label>User <input id="smtpUser"></label>
+          <label>Pass <input id="smtpPass" type="password"></label>
+          <label>From <input id="smtpFrom"></label>
+        </div>
+      </div>
 
-    <h4>Articles (JSON)</h4>
-    <textarea id="articles" class="json-area" rows="10"></textarea>
+      <div class="tab-pane" id="tab-security">
+        <h3>Sicherheit</h3>
+        <p>Passwort regelmäßig ändern und nur über VPS-URL einloggen.</p>
+        <button class="btn" onclick="changePassword()">Passwort ändern</button>
+      </div>
 
-    <h4>Footer copy</h4>
-    <input id="copy">
+      <div class="tab-pane" id="tab-actions">
+        <h3>Aktionen</h3>
+        <p>Alle Änderungen werden in content.json gespeichert und direkt auf der Website sichtbar.</p>
+        <div class="rowBtns">
+          <button class="btn" onclick="save()">💾 Alles speichern</button>
+          <button class="btn btn-white" onclick="logout()">Logout</button>
+        </div>
+      </div>
 
-    <h4>SMTP (for lead emails)</h4>
-    <div class="admin-grid cols-5">
-      <label>Host <input id="smtpHost"></label>
-      <label>Port <input id="smtpPort"></label>
-      <label>User <input id="smtpUser"></label>
-      <label>Pass <input id="smtpPass" type="password"></label>
-      <label>From <input id="smtpFrom"></label>
-    </div>
-
-    <div class="rowBtns sticky-actions">
-      <button class="btn" onclick="save()">Save all</button>
-      <button class="btn btn-white" onclick="changePassword()">Change password</button>
-      <button class="btn btn-white" onclick="logout()">Logout</button>
-    </div>
-    <p id="adminMsg"></p>
+      <div class="sticky-actions">
+        <button class="btn" onclick="save()">💾 Save all</button>
+        <button class="btn btn-white" onclick="reloadSite()">🔄 Website neu laden</button>
+        <span id="adminMsg" class="save-state"></span>
+      </div>
+    </section>
   </section>
 </main>
 <script src="/public/admin.js"></script>
