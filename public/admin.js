@@ -114,7 +114,14 @@ async function save() {
       body: JSON.stringify(content)
     });
 
-    if (!r.ok) return setMsg('Fehler beim Speichern', false);
+    if (!r.ok) {
+      let msg = 'Fehler beim Speichern';
+      try {
+        const j = await r.json();
+        msg = j?.message || j?.error || msg;
+      } catch {}
+      return setMsg(`${msg} (HTTP ${r.status})`, false);
+    }
     const stamp = new Date().toLocaleTimeString();
     setMsg(`Gespeichert ✅ (${stamp})`);
   } catch (e) {
