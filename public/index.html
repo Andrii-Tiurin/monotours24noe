@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monotours24</title><link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<div class="topline" id="tagline"></div>
+<header class="hero-header">
+  <div class="container nav">
+    <a class="logo" id="logo" href="#"></a>
+    <nav id="menu"></nav>
+  </div>
+  <div class="container hero-grid">
+    <div><h1 id="title">Alle Reisen an einem Ort</h1><p id="subtitle">Schnell suchen. Einfach buchen.</p></div>
+    <div class="hero-illu">🌴✈️🏖️</div>
+  </div>
+</header>
+<main class="main-light">
+  <section class="container section" id="hot"><h2>🔥 Heiße Touren</h2><div id="hotTours" class="hot-grid"></div></section>
+  <section class="container section" id="countries"><h2>Beliebte Länder</h2><div id="countriesGrid" class="countries"></div></section>
+  <section class="container section" id="articles"><h2>Artikel</h2><div id="articlesGrid" class="promo-grid"></div></section>
+  <section class="container section" id="contact">
+    <h2>Kontakt</h2>
+    <form id="contactForm" class="card form">
+      <input name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="E-Mail" required>
+      <textarea name="message" placeholder="Nachricht" required></textarea>
+      <button class="btn" type="submit">Senden</button>
+      <p id="contactMsg"></p>
+    </form>
+  </section>
+</main>
+<footer class="footer-light"><div class="container foot-grid" id="footer"></div><div class="container copy" id="copy"></div></footer>
+<script src="/public/site.js"></script>
+</body></html>

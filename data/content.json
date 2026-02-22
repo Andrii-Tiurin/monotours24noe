@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "Monotours24",
+    "tagline": "Alle Reisen an einem Ort",
+    "logoText": "Monotours24",
+    "favicon": "✈️"
+  },
+  "menu": [
+    {"label": "Hot Deals", "href": "#hot"},
+    {"label": "Länder", "href": "#countries"},
+    {"label": "Newsletter", "href": "#newsletter"},
+    {"label": "Kontakt", "href": "#contact"}
+  ],
+  "footer": {
+    "col1": ["Touren", "Über uns", "Kontakt"],
+    "col2": ["Impressum", "Datenschutz"],
+    "copy": "© Monotours24"
+  },
+  "contacts": {
+    "email": "monotours24@gmail.com",
+    "phone": "+49 175 9068548",
+    "instagram": "https://www.instagram.com/monotours24.de/",
+    "notifyEmail": "monotours24@gmail.com"
+  },
+  "hotTours": [
+    {"title": "Türkei, Kemer", "details": "7 Nächte • All Inclusive", "price": "ab 899 €", "rating": "8.9"},
+    {"title": "Ägypten, Sharm", "details": "7 Nächte • Flug inkl.", "price": "ab 949 €", "rating": "8.7"}
+  ],
+  "countries": [
+    {"name": "Ägypten", "price": "ab 399 €"},
+    {"name": "Türkei", "price": "ab 349 €"},
+    {"name": "VAE", "price": "ab 699 €"}
+  ],
+  "articles": [
+    {"title": "Top-Deals diese Woche", "text": "Die besten Angebote für Sonne und Meer."}
+  ],
+  "smtp": {
+    "host": "",
+    "port": 587,
+    "user": "",
+    "pass": "",
+    "from": ""
+  }
+}
