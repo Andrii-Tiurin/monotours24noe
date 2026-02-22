@@ -2,7 +2,10 @@
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg)}
 .container{width:min(1120px,92%);margin:0 auto}
 .topline{background:#10244f;color:#dbe7ff;text-align:center;padding:8px 12px;font-weight:600}
-.hero-header{position:relative;background:linear-gradient(180deg,#dff0ff 0%,#cfe5fb 56%,#e7effa 100%);overflow:hidden}
+.hero-header{position:relative;background:
+  linear-gradient(180deg,rgba(223,240,255,.72) 0%,rgba(207,229,251,.74) 56%,rgba(231,239,250,.84) 100%),
+  url('public/assets/hero-mountains-default.jpg') center bottom/cover no-repeat;
+overflow:hidden}
 .hero-header::before{content:"";position:absolute;left:-8%;right:-8%;bottom:42px;height:130px;z-index:1;
   background:
     radial-gradient(120% 140% at 8% 100%, rgba(175,204,238,.55) 0 48%, transparent 50%),
