@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monotours24 — Kontakt</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="header"><div class="container nav"><a class="logo" href="index.html">Monotours24</a><nav><a href="index.html" data-i18n="nav_home">Start</a><a href="tours.html" data-i18n="nav_tours">Touren</a><a href="about.html" data-i18n="nav_about">Über uns</a><a href="contact.html" data-i18n="nav_contact">Kontakt</a></nav><div class="lang-switch"><button data-lang="de">DE</button><button data-lang="ru">RU</button><button data-lang="en">EN</button></div></div></header>
+<main class="container">
+  <h1 data-i18n="contact_title">Kontaktiere uns</h1>
+  <div class="grid2">
+    <div class="card">
+      <p><strong>Email:</strong> <a href="mailto:monotours24@gmail.com">monotours24@gmail.com</a></p>
+      <p><strong>Telefon:</strong> <a href="tel:+491759068548">+49 175 9068548</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/monotours24.de/" target="_blank">@monotours24.de</a></p>
+    </div>
+    <form class="card form" onsubmit="return submitForm(event)">
+      <label data-i18n="form_name">Name<input required type="text" /></label>
+      <label data-i18n="form_email">E-Mail<input required type="email" /></label>
+      <label data-i18n="form_msg">Nachricht<textarea rows="4" required></textarea></label>
+      <button class="btn" type="submit" data-i18n="form_send">Senden</button>
+      <p id="formMsg" class="muted"></p>
+    </form>
+  </div>
+</main>
+<footer class="footer"><div class="container footer-row"><span>© <span id="year"></span> Monotours24</span><div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
+<script src="app.js"></script>
+</body>
+</html>

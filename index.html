@@ -3,105 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monotours24 — Ihr modernes Online-Reisebüro</title>
-  <meta name="description" content="Monotours24: persönliche Reiseberatung, Pauschalreisen, Flüge, Hotels und individuelle Traumreisen in Europa und weltweit." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Monotours24 — Start</title>
+  <meta name="description" content="Monotours24 — modernes Reisebüro." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="logo">Monotours24</div>
-      <nav>
-        <a href="#services">Leistungen</a>
-        <a href="#about">Über uns</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
-      <a class="btn btn-sm" href="#contact">Anfrage senden</a>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html">Monotours24</a>
+    <nav>
+      <a href="index.html" data-i18n="nav_home">Start</a>
+      <a href="tours.html" data-i18n="nav_tours">Touren</a>
+      <a href="about.html" data-i18n="nav_about">Über uns</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <div class="lang-switch">
+      <button data-lang="de">DE</button>
+      <button data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge">Persönlich • Schnell • Zuverlässig</span>
-          <h1>Dein nächster Urlaub beginnt hier ✈️</h1>
-          <p>
-            Wir helfen dir, die besten Reiseangebote zu finden: Pauschalreisen, Flüge,
-            Hotels und individuelle Touren — transparent, unkompliziert und mit persönlicher Beratung.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#contact">Kostenlose Anfrage</a>
-            <a class="btn btn-ghost" href="https://www.instagram.com/monotours24.de/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
-        <div class="card highlight">
-          <h3>Warum Monotours24?</h3>
-          <ul>
-            <li>Individuelle подборка маршрутов и отелей</li>
-            <li>Поддержка до, во время и после поездки</li>
-            <li>Выгодные цены и понятные условия</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Unsere Leistungen</h2>
-        <div class="cards">
-          <article class="card"><h3>Pauschalreisen</h3><p>Strand, City, Familienurlaub oder Last Minute — wir finden das passende Paket.</p></article>
-          <article class="card"><h3>Flüge & Hotels</h3><p>Flexible Kombinationen mit optimalem Preis-Leistungs-Verhältnis.</p></article>
-          <article class="card"><h3>Individuelle Planung</h3><p>Persönliche маршруты под твои даты, бюджет и стиль отдыха.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section alt">
-      <div class="container">
-        <h2>Über Monotours24</h2>
-        <p>
-          Monotours24 ist ein modernes Online-Reisebüro aus Deutschland.
-          Unser Fokus: persönliche Beratung, transparente Kommunikation und Reisen,
-          die wirklich zu dir passen.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2>Kontakt</h2>
-        <div class="cards">
-          <div class="card">
-            <p><strong>E-Mail:</strong> <a href="mailto:monotours24@gmail.com">monotours24@gmail.com</a></p>
-            <p><strong>Telefon:</strong> <a href="tel:+491759068548">+49 175 9068548</a></p>
-            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/monotours24.de/" target="_blank" rel="noopener">@monotours24.de</a></p>
-          </div>
-          <form class="card form" onsubmit="return submitForm(event)">
-            <label>Name<input required type="text" name="name" /></label>
-            <label>E-Mail<input required type="email" name="email" /></label>
-            <label>Nachricht<textarea required name="message" rows="4"></textarea></label>
-            <button class="btn" type="submit">Senden</button>
-            <p id="formMsg" class="muted"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-row">
-      <span>© <span id="year"></span> Monotours24</span>
-      <div>
-        <a href="https://monotours24.de/impressum.html" target="_blank" rel="noopener">Impressum</a>
-        <a href="https://monotours24.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
-      </div>
+<main class="container">
+  <section class="hero">
+    <p class="badge" data-i18n="hero_badge">Persönlich • Schnell • Zuverlässig</p>
+    <h1 data-i18n="hero_title">Dein nächster Urlaub beginnt hier ✈️</h1>
+    <p data-i18n="hero_text">Wir finden für dich passende Reisen in Europa und weltweit — einfach, transparent und mit echter Beratung.</p>
+    <div class="hero-actions">
+      <a class="btn" href="contact.html" data-i18n="hero_cta">Kostenlose Anfrage</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/monotours24.de/" target="_blank" rel="noopener">Instagram</a>
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <section class="grid3">
+    <article class="card">
+      <h3 data-i18n="card1_title">Pauschalreisen</h3>
+      <p data-i18n="card1_text">Strand, City, Familienurlaub oder Last Minute.</p>
+    </article>
+    <article class="card">
+      <h3 data-i18n="card2_title">Flüge + Hotels</h3>
+      <p data-i18n="card2_text">Optimale Kombinationen für dein Budget.</p>
+    </article>
+    <article class="card">
+      <h3 data-i18n="card3_title">Individuelle Touren</h3>
+      <p data-i18n="card3_text">Маршруты под твои даты и стиль отдыха.</p>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Monotours24</span>
+    <div>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
