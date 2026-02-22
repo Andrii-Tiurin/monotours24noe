@@ -44,6 +44,19 @@
           <label>Logo Text <input id="logoText"></label>
           <label>Favicon Emoji/Text <input id="favicon"></label>
         </div>
+
+        <h4>Hero-Fond (adaptiv)</h4>
+        <div class="admin-grid cols-2">
+          <label>Bild hochladen (JPG/PNG/WebP)
+            <input id="heroBgFile" type="file" accept="image/*">
+          </label>
+          <div>
+            <img id="heroBgPreview" class="hero-bg-preview" alt="Hero preview" />
+            <div class="rowBtns" style="margin-top:8px">
+              <button type="button" class="btn btn-white" onclick="clearHeroBg()">Hintergrund löschen</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="tab-pane" id="tab-content">

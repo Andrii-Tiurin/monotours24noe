@@ -1,4 +1,5 @@
 let content = null;
+let heroBgData = '';
 
 function setMsg(text, ok = true) {
   const el = document.getElementById('adminMsg') || document.getElementById('loginMsg');
@@ -37,6 +38,27 @@ async function login() {
 
 async function loadContent() {
   content = await fetch('/api/admin/content?ts=' + Date.now()).then(r => r.json());
+  if (!content.design) content.design = {};
+  heroBgData = content.design.heroBgData || '';
+  const prev = document.getElementById('heroBgPreview');
+  if (prev) prev.src = heroBgData || '';
+
+  const fileInput = document.getElementById('heroBgFile');
+  if (fileInput && !fileInput.dataset.bound) {
+    fileInput.addEventListener('change', (e) => {
+      const f = e.target.files?.[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        heroBgData = String(reader.result || '');
+        const p = document.getElementById('heroBgPreview');
+        if (p) p.src = heroBgData;
+        setMsg('Bild geladen. Jetzt auf Save all klicken.');
+      };
+      reader.readAsDataURL(f);
+    });
+    fileInput.dataset.bound = '1';
+  }
   siteName.value = content.site.name;
   tagline.value = content.site.tagline;
   logoText.value = content.site.logoText;
@@ -83,6 +105,8 @@ async function save() {
       pass: smtpPass.value,
       from: smtpFrom.value
     };
+    content.design = content.design || {};
+    content.design.heroBgData = heroBgData || '';
 
     const r = await fetch('/api/admin/content', {
       method: 'PUT',
@@ -116,8 +140,18 @@ function reloadSite() {
   window.open('/?ts=' + Date.now(), '_blank');
 }
 
+function clearHeroBg() {
+  heroBgData = '';
+  const p = document.getElementById('heroBgPreview');
+  if (p) p.src = '';
+  const f = document.getElementById('heroBgFile');
+  if (f) f.value = '';
+  setMsg('Hero-Hintergrund entfernt. Save all drücken.');
+}
+
 window.login = login;
 window.save = save;
 window.changePassword = changePassword;
 window.logout = logout;
 window.reloadSite = reloadSite;
+window.clearHeroBg = clearHeroBg;
