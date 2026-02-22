@@ -55,6 +55,8 @@ p{margin:0;color:#24314f}
 .country b,.country small{position:relative;z-index:1}
 .country b{font-size:1.4rem}
 .contact-box{background:#fff;border:1px solid #dce7fb;border-radius:16px;padding:18px;box-shadow:0 8px 16px rgba(0,0,0,.06)}
+.contact-list{margin:10px 0 0;padding-left:18px;color:#40506f;display:grid;gap:6px}
+.contact-list a{color:#2151a4;text-decoration:none}
 .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .egypt{background-image:url('https://picsum.photos/seed/egypt-country/900/420')}.turkey{background-image:url('https://picsum.photos/seed/turkey-country/900/420')}.uae{background-image:url('https://picsum.photos/seed/uae-country/900/420')}.spain{background-image:url('https://picsum.photos/seed/spain-country/900/420')}.thai{background-image:url('https://picsum.photos/seed/thailand-country/900/420')}.maldives{background-image:url('https://picsum.photos/seed/maldives-country/900/420')}
 .footer-light{background:#fff;margin-top:30px;border-top:1px solid #e8edf8;padding:20px 0}

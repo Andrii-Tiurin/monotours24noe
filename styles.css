@@ -2,10 +2,11 @@
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg)}
 .container{width:min(1120px,92%);margin:0 auto}
 .topline{background:#10244f;color:#dbe7ff;text-align:center;padding:8px 12px;font-weight:600}
-.hero-header{position:relative;background:
+.hero-header{position:relative;--hero-photo:url('/public/assets/hero-mountains.jpg');background:
   linear-gradient(180deg,rgba(223,240,255,.72) 0%,rgba(207,229,251,.74) 56%,rgba(231,239,250,.84) 100%),
-  url('public/assets/hero-mountains-default.jpg') center bottom/cover no-repeat;
+  var(--hero-photo) center bottom/cover no-repeat;
 overflow:hidden}
+.hero-has-custom-bg{background-blend-mode:normal,soft-light}
 .hero-header::before{content:"";position:absolute;left:-8%;right:-8%;bottom:42px;height:130px;z-index:1;
   background:
     radial-gradient(120% 140% at 8% 100%, rgba(175,204,238,.55) 0 48%, transparent 50%),
@@ -54,9 +55,36 @@ p{margin:0;color:#24314f}
 .country b,.country small{position:relative;z-index:1}
 .country b{font-size:1.4rem}
 .contact-box{background:#fff;border:1px solid #dce7fb;border-radius:16px;padding:18px;box-shadow:0 8px 16px rgba(0,0,0,.06)}
+.contact-list{margin:10px 0 0;padding-left:18px;color:#40506f;display:grid;gap:6px}
+.contact-list a{color:#2151a4;text-decoration:none}
 .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .egypt{background-image:url('https://picsum.photos/seed/egypt-country/900/420')}.turkey{background-image:url('https://picsum.photos/seed/turkey-country/900/420')}.uae{background-image:url('https://picsum.photos/seed/uae-country/900/420')}.spain{background-image:url('https://picsum.photos/seed/spain-country/900/420')}.thai{background-image:url('https://picsum.photos/seed/thailand-country/900/420')}.maldives{background-image:url('https://picsum.photos/seed/maldives-country/900/420')}
 .footer-light{background:#fff;margin-top:30px;border-top:1px solid #e8edf8;padding:20px 0}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}.foot-grid a{display:block;text-decoration:none;color:#43506b;margin:6px 0}.logo.dark{color:#111a2e}.copy{margin-top:8px;color:#7b8498;font-size:.92rem}
 @media (max-width:980px){.hero-grid,.newsletter{grid-template-columns:1fr}.search-bar{grid-template-columns:1fr 1fr}.tour-grid{grid-template-columns:1fr 1fr}.countries{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){nav{display:none}.search-bar{grid-template-columns:1fr}.promo-grid,.tour-grid,.countries,.foot-grid{grid-template-columns:1fr}}
+
+/* admin */
+.admin-page{background:#eef2f8}
+.admin-wrap{max-width:1280px;padding:20px 0 26px}
+.admin-topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.admin-layout{display:grid;grid-template-columns:260px 1fr;gap:14px}
+.admin-sidebar{height:fit-content;position:sticky;top:12px;padding:10px}
+.admin-sidebar .tab{display:block;width:100%;text-align:left;padding:11px 12px;margin:6px 0;border:1px solid #d8e5ff;background:#fff;border-radius:10px;font-weight:700;color:#243a63;cursor:pointer}
+.admin-sidebar .tab.active{background:linear-gradient(90deg,#e9f1ff,#dce9ff);border-color:#9dbcf6}
+.admin-main{padding:20px 22px}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.admin-grid{display:grid;gap:12px;margin-bottom:10px}
+.admin-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.admin-grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.admin-grid.cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.admin-page label{display:flex;flex-direction:column;gap:6px;font-weight:600;color:#30415f}
+.admin-page input,.admin-page textarea{width:100%}
+.json-area{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;min-height:220px;resize:vertical}
+.hero-bg-preview{width:100%;max-width:420px;height:130px;object-fit:cover;border-radius:12px;border:1px solid #d4e0f7;background:#f3f7ff}
+.rowBtns{display:flex;gap:10px;flex-wrap:wrap}
+.sticky-actions{position:sticky;bottom:8px;background:rgba(255,255,255,.95);padding:10px;border:1px solid #dce6fb;border-radius:12px;display:flex;align-items:center;gap:10px;margin-top:14px}
+.save-state{font-weight:700;color:#245f2f}
+@media (max-width:980px){.admin-layout{grid-template-columns:1fr}.admin-grid.cols-4,.admin-grid.cols-5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.admin-grid.cols-2,.admin-grid.cols-4,.admin-grid.cols-5{grid-template-columns:1fr}}
