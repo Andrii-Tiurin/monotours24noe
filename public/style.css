@@ -25,7 +25,7 @@ p{margin:0;color:#24314f}
 .hot h4{margin:34px 0 6px}.hot strong{margin-top:8px}
 .card1{background:linear-gradient(120deg,#20a4ff,#3a7bff)}.card2{background:linear-gradient(120deg,#00b7a8,#2c9bff)}.card3{background:linear-gradient(120deg,#5f7bff,#7a4dff)}.card4{background:linear-gradient(120deg,#24b56b,#28b8c9)}
 .promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.promo-card{border-radius:18px;padding:22px}.promo-card.blue{background:linear-gradient(140deg,#d8ebff,#b9d8ff)}.promo-card.sky{background:linear-gradient(140deg,#dff2ff,#cde5ff)}
+.promo-card{border-radius:18px;padding:22px}.promo-card a{display:inline-block;margin-top:8px;color:#1b4b96;text-decoration:none;font-weight:700}.promo-card.blue{background:linear-gradient(140deg,#d8ebff,#b9d8ff)}.promo-card.sky{background:linear-gradient(140deg,#dff2ff,#cde5ff)}
 .countries{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .country{text-decoration:none;color:#fff;min-height:110px;border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 16px rgba(0,0,0,.12)}
 .country b{font-size:1.4rem}

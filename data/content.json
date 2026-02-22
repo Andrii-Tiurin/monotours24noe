@@ -24,12 +24,17 @@
   },
   "hotTours": [
     {"title": "Türkei, Kemer", "details": "7 Nächte • All Inclusive", "price": "ab 899 €", "rating": "8.9"},
-    {"title": "Ägypten, Sharm", "details": "7 Nächte • Flug inkl.", "price": "ab 949 €", "rating": "8.7"}
+    {"title": "Ägypten, Sharm", "details": "7 Nächte • Flug inkl.", "price": "ab 949 €", "rating": "8.7"},
+    {"title": "Dubai, VAE", "details": "7 Nächte • Frühstück", "price": "ab 1.190 €", "rating": "8.3"},
+    {"title": "Thailand, Pattaya", "details": "8 Nächte • Flug inkl.", "price": "ab 1.690 €", "rating": "8.6"}
   ],
   "countries": [
     {"name": "Ägypten", "price": "ab 399 €"},
     {"name": "Türkei", "price": "ab 349 €"},
-    {"name": "VAE", "price": "ab 699 €"}
+    {"name": "VAE", "price": "ab 699 €"},
+    {"name": "Spanien", "price": "ab 529 €"},
+    {"name": "Thailand", "price": "ab 999 €"},
+    {"name": "Malediven", "price": "ab 1.290 €"}
   ],
   "articles": [
     {"title": "Top-Deals diese Woche", "text": "Die besten Angebote für Sonne und Meer."}

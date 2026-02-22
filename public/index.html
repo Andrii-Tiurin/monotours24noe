@@ -27,7 +27,18 @@
   </div>
 </header>
 <main class="main-light">
+  <section class="container promo-grid">
+    <article class="promo-card blue"><h3>Garantierte Touren</h3><p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p><a href="#">Mehr sehen →</a></article>
+    <article class="promo-card sky"><h3>Ausflüge</h3><p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p><a href="#">Kategorie öffnen →</a></article>
+  </section>
   <section class="container section" id="hot"><h2>🔥 Heiße Touren</h2><div id="hotTours" class="hot-grid"></div></section>
+  <section id="newsletter" class="container newsletter section">
+    <div><h3>Newsletter für Hot Deals</h3><p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p></div>
+    <form onsubmit="event.preventDefault(); alert('Danke für die Anmeldung!');">
+      <input type="email" placeholder="deine@email.de" required>
+      <button class="btn" type="submit">Anmelden</button>
+    </form>
+  </section>
   <section class="container section" id="countries"><h2>Beliebte Länder</h2><div id="countriesGrid" class="countries"></div></section>
   <section class="container section" id="articles"><h2>Artikel</h2><div id="articlesGrid" class="promo-grid"></div></section>
   <section class="container section" id="contact">
