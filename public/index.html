@@ -1,57 +1,92 @@
 <!doctype html>
-<html lang="de"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Monotours24</title><link rel="stylesheet" href="/public/style.css">
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monotours24 — Buntes Reiseportal</title>
+  <meta name="description" content="Monotours24 Reiseportal" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="topline" id="tagline"></div>
-<header class="hero-header">
-  <div class="container nav">
-    <a class="logo" id="logo" href="#"></a>
-    <nav id="menu"></nav>
-  </div>
-  <div class="container hero-grid">
-    <div><h1 id="title">Alle Reisen an einem Ort</h1><p id="subtitle">Schnell suchen. Einfach buchen.</p></div>
-    <div class="hero-illu">
-      <img src="/public/assets/hero-germany.jpg" alt="Familie auf Reise in Deutschland" />
+  <div class="topline">☀️ Monotours24 — Sonne, Meer, Urlaub!</div>
+  <header class="hero-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Monotours24</a>
+      <nav>
+        <a href="#hot">Hot Deals</a>
+        <a href="#countries">Länder</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+      <a class="btn btn-white" href="#search">Reise finden</a>
     </div>
-  </div>
-  <div class="container search-wrap" id="search">
-    <form class="search-bar" onsubmit="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-      <input type="text" placeholder="Wohin? (z. B. Türkei)" required>
-      <input type="date" required>
-      <select><option>7–9 Nächte</option></select>
-      <select><option>2 Erwachsene</option></select>
-      <button class="btn" type="submit">Suchen</button>
-    </form>
-  </div>
-</header>
-<main class="main-light">
-  <section class="container promo-grid">
-    <article class="promo-card blue"><h3>Garantierte Touren</h3><p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p><a href="#">Mehr sehen →</a></article>
-    <article class="promo-card sky"><h3>Ausflüge</h3><p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p><a href="#">Kategorie öffnen →</a></article>
-  </section>
-  <section class="container section" id="hot"><h2>🔥 Heiße Touren</h2><div id="hotTours" class="hot-grid"></div></section>
-  <section id="newsletter" class="container newsletter section">
-    <div><h3>Newsletter für Hot Deals</h3><p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p></div>
-    <form onsubmit="event.preventDefault(); alert('Danke für die Anmeldung!');">
-      <input type="email" placeholder="deine@email.de" required>
-      <button class="btn" type="submit">Anmelden</button>
-    </form>
-  </section>
-  <section class="container section" id="countries"><h2>Beliebte Länder</h2><div id="countriesGrid" class="countries"></div></section>
-  <section class="container section" id="articles"><h2>Artikel</h2><div id="articlesGrid" class="promo-grid"></div></section>
-  <section class="container section" id="contact">
-    <h2>Kontakt</h2>
-    <form id="contactForm" class="card form">
-      <input name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="E-Mail" required>
-      <textarea name="message" placeholder="Nachricht" required></textarea>
-      <button class="btn" type="submit">Senden</button>
-      <p id="contactMsg"></p>
-    </form>
-  </section>
-</main>
-<footer class="footer-light"><div class="container foot-grid" id="footer"></div><div class="container copy" id="copy"></div></footer>
-<script src="/public/site.js"></script>
-</body></html>
+
+    <div class="container hero-grid">
+      <div>
+        <h1>Alle Reisen<br>an einem Ort</h1>
+        <p>Finde in Minuten die passende Reise — von Last-Minute bis Premium-Urlaub. Schnell, transparent und persönlich begleitet.</p>
+      </div>
+      <div class="hero-illu"><img src="public/assets/hero-germany.jpg" alt="Familie auf Reise"></div>
+    </div>
+
+    <div class="container search-wrap" id="search">
+      <form class="search-bar" onsubmit="event.preventDefault();alert('Anfrage gesendet!');">
+        <input type="text" placeholder="Wohin? (z. B. Türkei)" required>
+        <input type="date" required>
+        <select><option>7–9 Nächte</option></select>
+        <select><option>2 Erwachsene</option></select>
+        <button class="btn" type="submit">Suchen</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="main-light">
+    <section class="container promo-grid">
+      <article class="promo-card blue"><h3>Garantierte Touren</h3><p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p></article>
+      <article class="promo-card sky"><h3>Ausflüge</h3><p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p></article>
+    </section>
+
+    <section id="hot" class="container section">
+      <h2>🔥 Heiße Touren</h2>
+      <div class="hot-grid">
+        <article class="hot card1"><span>8.9</span><h4>Türkei, Kemer</h4><p>7 Nächte • All Inclusive</p><strong>ab 899 €</strong></article>
+        <article class="hot card2"><span>8.7</span><h4>Ägypten, Sharm</h4><p>7 Nächte • Flug inkl.</p><strong>ab 949 €</strong></article>
+        <article class="hot card3"><span>8.3</span><h4>Dubai, VAE</h4><p>7 Nächte • Frühstück</p><strong>ab 1.190 €</strong></article>
+        <article class="hot card4"><span>8.6</span><h4>Thailand, Pattaya</h4><p>8 Nächte • Tropen</p><strong>ab 1.690 €</strong></article>
+      </div>
+    </section>
+
+    <section id="newsletter" class="container newsletter section">
+      <div><h3>Newsletter für Hot Deals</h3><p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p></div>
+      <form onsubmit="event.preventDefault();alert('Danke für die Anmeldung!');">
+        <input type="email" placeholder="deine@email.de" required>
+        <button class="btn" type="submit">Anmelden</button>
+      </form>
+    </section>
+
+    <section id="countries" class="container section">
+      <div class="section-head"><h2>Beliebte Länder</h2></div>
+      <div class="countries">
+        <a class="country egypt" href="#"><b>Ägypten</b><small>ab 399 €</small></a>
+        <a class="country turkey" href="#"><b>Türkei</b><small>ab 349 €</small></a>
+        <a class="country uae" href="#"><b>VAE</b><small>ab 699 €</small></a>
+        <a class="country spain" href="#"><b>Spanien</b><small>ab 529 €</small></a>
+        <a class="country thai" href="#"><b>Thailand</b><small>ab 999 €</small></a>
+        <a class="country maldives" href="#"><b>Malediven</b><small>ab 1.290 €</small></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-light">
+    <div class="container foot-grid">
+      <div><div class="logo dark">Monotours24</div><p>Online-Reisebüro in Deutschland.</p></div>
+      <div><a href="tours.html">Touren</a><a href="about.html">Über uns</a><a href="contact.html">Kontakt</a></div>
+      <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    </div>
+    <div class="container copy">© 2026 Monotours24</div>
+  </footer>
+</body>
+</html>
