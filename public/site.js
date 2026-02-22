@@ -2,6 +2,20 @@ async function load() {
   const data = await fetch('/api/public/content').then(r => r.json());
   document.title = data.site.name;
   document.getElementById('tagline').textContent = data.site.tagline;
+
+  const hero = document.querySelector('.hero-header');
+  if (hero) {
+    const img = data.design?.heroBgData;
+    if (img) {
+      hero.style.setProperty('--hero-photo', `url(${img})`);
+      hero.classList.add('hero-has-custom-bg');
+      const heroImg = document.querySelector('.hero-illu img');
+      if (heroImg) heroImg.src = img;
+    } else {
+      hero.style.setProperty('--hero-photo', 'none');
+      hero.classList.remove('hero-has-custom-bg');
+    }
+  }
   document.getElementById('logo').textContent = data.site.logoText || data.site.name;
   const menu = document.getElementById('menu');
   menu.innerHTML = data.menu.map(i => `<a href="${i.href}">${i.label}</a>`).join('');

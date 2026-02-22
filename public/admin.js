@@ -21,6 +21,29 @@ function bindTabs() {
   });
 }
 
+function fileToDataUrlCompressed(file, maxW = 1600, quality = 0.82) {
+  return new Promise((resolve, reject) => {
+    const fr = new FileReader();
+    fr.onerror = reject;
+    fr.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, maxW / img.width);
+        const w = Math.max(1, Math.round(img.width * scale));
+        const h = Math.max(1, Math.round(img.height * scale));
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = reject;
+      img.src = String(fr.result || '');
+    };
+    fr.readAsDataURL(file);
+  });
+}
+
 async function login() {
   const username = document.getElementById('u').value;
   const password = document.getElementById('p').value;
@@ -45,20 +68,21 @@ async function loadContent() {
 
   const fileInput = document.getElementById('heroBgFile');
   if (fileInput && !fileInput.dataset.bound) {
-    fileInput.addEventListener('change', (e) => {
+    fileInput.addEventListener('change', async (e) => {
       const f = e.target.files?.[0];
       if (!f) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        heroBgData = String(reader.result || '');
+      try {
+        heroBgData = await fileToDataUrlCompressed(f);
         const p = document.getElementById('heroBgPreview');
         if (p) p.src = heroBgData;
-        setMsg('Bild geladen. Jetzt auf Save all klicken.');
-      };
-      reader.readAsDataURL(f);
+        setMsg('Bild geladen (optimiert). Jetzt auf Save all klicken.');
+      } catch {
+        setMsg('Bild konnte nicht verarbeitet werden.', false);
+      }
     });
     fileInput.dataset.bound = '1';
   }
+
   siteName.value = content.site.name;
   tagline.value = content.site.tagline;
   logoText.value = content.site.logoText;
