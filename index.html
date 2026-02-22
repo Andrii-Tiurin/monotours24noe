@@ -3,127 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monotours24 — Heiße Reisen & Pauschalurlaub</title>
-  <meta name="description" content="Monotours24: modernes Online-Reisebüro in Deutschland. Suche nach Pauschalreisen, Flügen & Hotels mit persönlicher Beratung." />
+  <title>Monotours24 — Buntes Reiseportal</title>
+  <meta name="description" content="Helle, moderne Reiseplattform von Monotours24: heiße Touren, beliebte Länder und schnelle Anfrage." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">Monotours24 — Alle Reisen an einem Ort</header>
-  <header class="header">
+  <div class="topline">☀️ Monotours24 — Sonne, Meer, Urlaub!</div>
+
+  <header class="hero-header">
     <div class="container nav">
       <a class="logo" href="index.html">Monotours24</a>
       <nav>
-        <a href="#angebote">Angebote</a>
-        <a href="#vorteile">Vorteile</a>
+        <a href="#hot">Hot Deals</a>
+        <a href="#countries">Länder</a>
         <a href="#newsletter">Newsletter</a>
         <a href="contact.html">Kontakt</a>
       </nav>
-      <a class="btn btn-sm" href="#suche">Reise finden</a>
+      <a class="btn btn-white" href="#search">Reise finden</a>
+    </div>
+
+    <div class="container hero-grid">
+      <div>
+        <h1>Alle Reisen<br>an einem Ort</h1>
+        <p>Finde in Minuten die passende Reise — von Last-Minute bis Premium-Urlaub. Schnell, transparent und persönlich begleitet.</p>
+        <div class="tabs">
+          <span class="active">Tours</span>
+          <span>Excursions</span>
+          <span>World</span>
+        </div>
+      </div>
+      <div class="hero-illu" aria-hidden="true">🌴✈️🏖️</div>
+    </div>
+
+    <div class="container search-wrap" id="search">
+      <form class="search-bar" onsubmit="return fakeSearch(event)">
+        <input type="text" placeholder="Wohin? (z. B. Türkei)" required>
+        <input type="date" required>
+        <select><option>7–9 Nächte</option><option>5–7 Nächte</option><option>10–14 Nächte</option></select>
+        <select><option>2 Erwachsene</option><option>1 Erwachsene</option><option>Familie</option></select>
+        <button class="btn" type="submit">Suchen</button>
+      </form>
+      <p id="searchMsg" class="muted-light"></p>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-wrap">
-        <div>
-          <p class="badge">Schneller Online-Vergleich + persönliche Beratung</p>
-          <h1>Heiße Angebote & Traumreisen — einfach buchen</h1>
-          <p class="sub">Mehr als 130 Mio. Reiseoptionen aus zuverlässigen Quellen. Wir helfen dir, genau die passende Reise zu finden — fair, transparent, schnell.</p>
-        </div>
-        <form id="suche" class="search-card" onsubmit="return fakeSearch(event)">
-          <h3>Reise-Schnellsuche</h3>
-          <label>Reiseziel
-            <input type="text" placeholder="z. B. Türkei, Ägypten, Dubai" required>
-          </label>
-          <div class="row">
-            <label>Abreise<input type="date" required></label>
-            <label>Nächte<input type="number" min="1" max="30" value="7" required></label>
-          </div>
-          <div class="row">
-            <label>Reisende<input type="number" min="1" max="8" value="2" required></label>
-            <label>Verpflegung
-              <select>
-                <option>All Inclusive</option>
-                <option>Frühstück</option>
-                <option>Halbpension</option>
-              </select>
-            </label>
-          </div>
-          <button class="btn" type="submit">Angebote zeigen</button>
-          <p id="searchMsg" class="muted"></p>
-        </form>
+  <main class="main-light">
+    <section class="container promo-grid">
+      <article class="promo-card blue">
+        <h3>Garantierte Touren</h3>
+        <p>Kostenlose Sitzplatzwahl im Bus, faire Preise, starke Partner.</p>
+        <a href="tours.html">Mehr sehen →</a>
+      </article>
+      <article class="promo-card sky">
+        <h3>Ausflüge</h3>
+        <p>Die schönsten Städte Europas, Exkursionen und Kulturtrips.</p>
+        <a href="tours.html">Kategorie öffnen →</a>
+      </article>
+    </section>
+
+    <section id="hot" class="container section">
+      <h2>🔥 Heiße Touren</h2>
+      <div class="hot-grid">
+        <article class="hot card1"><span>8.9</span><h4>Türkei, Kemer</h4><p>7 Nächte • All Inclusive</p><strong>ab 899 €</strong></article>
+        <article class="hot card2"><span>8.7</span><h4>Ägypten, Sharm</h4><p>7 Nächte • Flug inkl.</p><strong>ab 949 €</strong></article>
+        <article class="hot card3"><span>8.3</span><h4>Dubai, VAE</h4><p>7 Nächte • Frühstück</p><strong>ab 1.190 €</strong></article>
+        <article class="hot card4"><span>8.6</span><h4>Thailand, Pattaya</h4><p>8 Nächte • Tropen</p><strong>ab 1.690 €</strong></article>
       </div>
     </section>
 
-    <section id="angebote" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Heiße Reiseangebote</h2>
-          <a href="contact.html">Alle Angebote anfragen →</a>
-        </div>
-        <div class="offers-grid">
-          <article class="offer card">
-            <span class="rating">8.9</span>
-            <h3>Türkei • Kemer</h3>
-            <p>7 Nächte • All Inclusive • Flug inklusive</p>
-            <strong>ab 899 € / 2 Personen</strong>
-          </article>
-          <article class="offer card">
-            <span class="rating">8.7</span>
-            <h3>Ägypten • Sharm El Sheikh</h3>
-            <p>7 Nächte • All Inclusive • Direktflug</p>
-            <strong>ab 949 € / 2 Personen</strong>
-          </article>
-          <article class="offer card">
-            <span class="rating">8.3</span>
-            <h3>VAE • Dubai</h3>
-            <p>7 Nächte • Frühstück • City & Beach</p>
-            <strong>ab 1.190 € / 2 Personen</strong>
-          </article>
-          <article class="offer card">
-            <span class="rating">8.6</span>
-            <h3>Thailand • Pattaya</h3>
-            <p>8 Nächte • Frühstück • Tropenurlaub</p>
-            <strong>ab 1.690 € / 2 Personen</strong>
-          </article>
-        </div>
+    <section id="newsletter" class="container newsletter section">
+      <div>
+        <h3>Newsletter für Hot Deals</h3>
+        <p>1–2 mal pro Woche die besten Angebote direkt in dein Postfach.</p>
       </div>
+      <form onsubmit="return subscribe(event)">
+        <input type="email" placeholder="deine@email.de" required>
+        <button class="btn" type="submit">Anmelden</button>
+      </form>
+      <p id="newsMsg" class="muted"></p>
     </section>
 
-    <section id="vorteile" class="section alt">
-      <div class="container perks">
-        <div class="card"><h3>Persönliche Betreuung</h3><p>Du bekommst einen echten Ansprechpartner statt nur Formularen.</p></div>
-        <div class="card"><h3>Schnelle Angebotsauswahl</h3><p>Wir filtern in kurzer Zeit die besten Optionen für dein Budget.</p></div>
-        <div class="card"><h3>Transparent & sicher</h3><p>Klare Bedingungen, ehrliche Beratung und strukturierter Buchungsprozess.</p></div>
-      </div>
-    </section>
-
-    <section id="newsletter" class="section">
-      <div class="container newsletter card">
-        <h2>Newsletter für heiße Deals</h2>
-        <p>Erhalte 1–2x pro Woche günstige Last-Minute-Angebote und Top-Reiseideen.</p>
-        <form onsubmit="return subscribe(event)">
-          <input type="email" placeholder="deine@email.de" required>
-          <button class="btn" type="submit">Jetzt anmelden</button>
-        </form>
-        <p id="newsMsg" class="muted"></p>
+    <section id="countries" class="container section">
+      <div class="section-head"><h2>Beliebte Länder</h2><a href="tours.html">Alle Länder →</a></div>
+      <div class="countries">
+        <a class="country lg egypt" href="tours.html"><b>Ägypten</b><small>ab 399 €</small></a>
+        <a class="country lg turkey" href="tours.html"><b>Türkei</b><small>ab 349 €</small></a>
+        <a class="country uae" href="tours.html"><b>VAE</b><small>ab 699 €</small></a>
+        <a class="country spain" href="tours.html"><b>Spanien</b><small>ab 529 €</small></a>
+        <a class="country thai" href="tours.html"><b>Thailand</b><small>ab 999 €</small></a>
+        <a class="country maldives" href="tours.html"><b>Malediven</b><small>ab 1.290 €</small></a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <span>© <span id="year"></span> Monotours24</span>
+  <footer class="footer-light">
+    <div class="container foot-grid">
+      <div>
+        <div class="logo dark">Monotours24</div>
+        <p>Online-Reisebüro in Deutschland.</p>
+      </div>
       <div>
         <a href="tours.html">Touren</a>
         <a href="about.html">Über uns</a>
+        <a href="contact.html">Kontakt</a>
+      </div>
+      <div>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
+    <div class="container copy">© <span id="year"></span> Monotours24</div>
   </footer>
 
   <script src="app.js"></script>
