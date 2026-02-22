@@ -3,65 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monotours24 — Start</title>
-  <meta name="description" content="Monotours24 — modernes Reisebüro." />
+  <title>Monotours24 — Heiße Reisen & Pauschalurlaub</title>
+  <meta name="description" content="Monotours24: modernes Online-Reisebüro in Deutschland. Suche nach Pauschalreisen, Flügen & Hotels mit persönlicher Beratung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="index.html">Monotours24</a>
-    <nav>
-      <a href="index.html" data-i18n="nav_home">Start</a>
-      <a href="tours.html" data-i18n="nav_tours">Touren</a>
-      <a href="about.html" data-i18n="nav_about">Über uns</a>
-      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
-    </nav>
-    <div class="lang-switch">
-      <button data-lang="de">DE</button>
-      <button data-lang="ru">RU</button>
-      <button data-lang="en">EN</button>
+  <header class="topbar">Monotours24 — Alle Reisen an einem Ort</header>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Monotours24</a>
+      <nav>
+        <a href="#angebote">Angebote</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+      <a class="btn btn-sm" href="#suche">Reise finden</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="hero">
-    <p class="badge" data-i18n="hero_badge">Persönlich • Schnell • Zuverlässig</p>
-    <h1 data-i18n="hero_title">Dein nächster Urlaub beginnt hier ✈️</h1>
-    <p data-i18n="hero_text">Wir finden für dich passende Reisen in Europa und weltweit — einfach, transparent und mit echter Beratung.</p>
-    <div class="hero-actions">
-      <a class="btn" href="contact.html" data-i18n="hero_cta">Kostenlose Anfrage</a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/monotours24.de/" target="_blank" rel="noopener">Instagram</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <p class="badge">Schneller Online-Vergleich + persönliche Beratung</p>
+          <h1>Heiße Angebote & Traumreisen — einfach buchen</h1>
+          <p class="sub">Mehr als 130 Mio. Reiseoptionen aus zuverlässigen Quellen. Wir helfen dir, genau die passende Reise zu finden — fair, transparent, schnell.</p>
+        </div>
+        <form id="suche" class="search-card" onsubmit="return fakeSearch(event)">
+          <h3>Reise-Schnellsuche</h3>
+          <label>Reiseziel
+            <input type="text" placeholder="z. B. Türkei, Ägypten, Dubai" required>
+          </label>
+          <div class="row">
+            <label>Abreise<input type="date" required></label>
+            <label>Nächte<input type="number" min="1" max="30" value="7" required></label>
+          </div>
+          <div class="row">
+            <label>Reisende<input type="number" min="1" max="8" value="2" required></label>
+            <label>Verpflegung
+              <select>
+                <option>All Inclusive</option>
+                <option>Frühstück</option>
+                <option>Halbpension</option>
+              </select>
+            </label>
+          </div>
+          <button class="btn" type="submit">Angebote zeigen</button>
+          <p id="searchMsg" class="muted"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="angebote" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Heiße Reiseangebote</h2>
+          <a href="contact.html">Alle Angebote anfragen →</a>
+        </div>
+        <div class="offers-grid">
+          <article class="offer card">
+            <span class="rating">8.9</span>
+            <h3>Türkei • Kemer</h3>
+            <p>7 Nächte • All Inclusive • Flug inklusive</p>
+            <strong>ab 899 € / 2 Personen</strong>
+          </article>
+          <article class="offer card">
+            <span class="rating">8.7</span>
+            <h3>Ägypten • Sharm El Sheikh</h3>
+            <p>7 Nächte • All Inclusive • Direktflug</p>
+            <strong>ab 949 € / 2 Personen</strong>
+          </article>
+          <article class="offer card">
+            <span class="rating">8.3</span>
+            <h3>VAE • Dubai</h3>
+            <p>7 Nächte • Frühstück • City & Beach</p>
+            <strong>ab 1.190 € / 2 Personen</strong>
+          </article>
+          <article class="offer card">
+            <span class="rating">8.6</span>
+            <h3>Thailand • Pattaya</h3>
+            <p>8 Nächte • Frühstück • Tropenurlaub</p>
+            <strong>ab 1.690 € / 2 Personen</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile" class="section alt">
+      <div class="container perks">
+        <div class="card"><h3>Persönliche Betreuung</h3><p>Du bekommst einen echten Ansprechpartner statt nur Formularen.</p></div>
+        <div class="card"><h3>Schnelle Angebotsauswahl</h3><p>Wir filtern in kurzer Zeit die besten Optionen für dein Budget.</p></div>
+        <div class="card"><h3>Transparent & sicher</h3><p>Klare Bedingungen, ehrliche Beratung und strukturierter Buchungsprozess.</p></div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section">
+      <div class="container newsletter card">
+        <h2>Newsletter für heiße Deals</h2>
+        <p>Erhalte 1–2x pro Woche günstige Last-Minute-Angebote und Top-Reiseideen.</p>
+        <form onsubmit="return subscribe(event)">
+          <input type="email" placeholder="deine@email.de" required>
+          <button class="btn" type="submit">Jetzt anmelden</button>
+        </form>
+        <p id="newsMsg" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Monotours24</span>
+      <div>
+        <a href="tours.html">Touren</a>
+        <a href="about.html">Über uns</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="grid3">
-    <article class="card">
-      <h3 data-i18n="card1_title">Pauschalreisen</h3>
-      <p data-i18n="card1_text">Strand, City, Familienurlaub oder Last Minute.</p>
-    </article>
-    <article class="card">
-      <h3 data-i18n="card2_title">Flüge + Hotels</h3>
-      <p data-i18n="card2_text">Optimale Kombinationen für dein Budget.</p>
-    </article>
-    <article class="card">
-      <h3 data-i18n="card3_title">Individuelle Touren</h3>
-      <p data-i18n="card3_text">Маршруты под твои даты и стиль отдыха.</p>
-    </article>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footer-row">
-    <span>© <span id="year"></span> Monotours24</span>
-    <div>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </div>
-  </div>
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
