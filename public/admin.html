@@ -4,38 +4,62 @@
 <title>Admin — Monotours24</title><link rel="stylesheet" href="/public/style.css">
 </head>
 <body class="admin-page">
-<main class="container">
+<main class="container admin-wrap">
   <h1>Admin Panel</h1>
-  <section id="loginBox" class="card">
+
+  <section id="loginBox" class="card admin-card">
     <h3>Login</h3>
-    <input id="u" value="admin" placeholder="Username">
-    <input id="p" type="password" placeholder="Password">
-    <button class="btn" onclick="login()">Einloggen</button>
+    <div class="admin-grid cols-2">
+      <label>Username<input id="u" value="admin" placeholder="Username"></label>
+      <label>Password<input id="p" type="password" placeholder="Password"></label>
+    </div>
+    <div class="rowBtns">
+      <button class="btn" onclick="login()">Einloggen</button>
+    </div>
     <p id="loginMsg"></p>
   </section>
 
-  <section id="panel" class="card" style="display:none">
+  <section id="panel" class="card admin-card" style="display:none">
     <h3>Website Content</h3>
-    <label>Site Name <input id="siteName"></label>
-    <label>Tagline <input id="tagline"></label>
-    <label>Logo Text <input id="logoText"></label>
-    <label>Favicon Emoji/Text <input id="favicon"></label>
-    <label>Kontakt E-Mail <input id="email"></label>
-    <label>Telefon <input id="phone"></label>
-    <label>Instagram URL <input id="insta"></label>
-    <label>Notify E-Mail <input id="notify"></label>
-    <h4>Hot Tours (JSON)</h4><textarea id="hotTours" rows="6"></textarea>
-    <h4>Countries (JSON)</h4><textarea id="countries" rows="6"></textarea>
-    <h4>Articles (JSON)</h4><textarea id="articles" rows="6"></textarea>
-    <h4>Footer copy</h4><input id="copy">
-    <h4>SMTP (for lead emails)</h4>
-    <label>Host <input id="smtpHost"></label>
-    <label>Port <input id="smtpPort"></label>
-    <label>User <input id="smtpUser"></label>
-    <label>Pass <input id="smtpPass" type="password"></label>
-    <label>From <input id="smtpFrom"></label>
 
-    <div class="rowBtns">
+    <h4>Allgemein</h4>
+    <div class="admin-grid cols-4">
+      <label>Site Name <input id="siteName"></label>
+      <label>Tagline <input id="tagline"></label>
+      <label>Logo Text <input id="logoText"></label>
+      <label>Favicon Emoji/Text <input id="favicon"></label>
+    </div>
+
+    <h4>Kontakte</h4>
+    <div class="admin-grid cols-4">
+      <label>Kontakt E-Mail <input id="email"></label>
+      <label>Telefon <input id="phone"></label>
+      <label>Instagram URL <input id="insta"></label>
+      <label>Notify E-Mail <input id="notify"></label>
+    </div>
+
+    <h4>Hot Tours (JSON)</h4>
+    <textarea id="hotTours" class="json-area" rows="10"></textarea>
+
+    <h4>Countries (JSON)</h4>
+    <textarea id="countries" class="json-area" rows="10"></textarea>
+
+    <h4>Articles (JSON)</h4>
+    <textarea id="articles" class="json-area" rows="10"></textarea>
+
+    <h4>Footer copy</h4>
+    <input id="copy">
+
+    <h4>SMTP (for lead emails)</h4>
+    <div class="admin-grid cols-5">
+      <label>Host <input id="smtpHost"></label>
+      <label>Port <input id="smtpPort"></label>
+      <label>User <input id="smtpUser"></label>
+      <label>Pass <input id="smtpPass" type="password"></label>
+      <label>From <input id="smtpFrom"></label>
+    </div>
+
+    <div class="rowBtns sticky-actions">
       <button class="btn" onclick="save()">Save all</button>
       <button class="btn btn-white" onclick="changePassword()">Change password</button>
       <button class="btn btn-white" onclick="logout()">Logout</button>

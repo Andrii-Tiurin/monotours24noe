@@ -32,6 +32,17 @@ p{margin:0;color:#24314f}
 .egypt{background:linear-gradient(120deg,#d88a4b,#9c5f2b)}.turkey{background:linear-gradient(120deg,#2d88c8,#45b5f0)}.uae{background:linear-gradient(120deg,#2ca9a0,#5ec7bb)}.spain{background:linear-gradient(120deg,#f07a58,#ec5f81)}.thai{background:linear-gradient(120deg,#2a9d8f,#4db6ac)}.maldives{background:linear-gradient(120deg,#1db9b2,#47d7ff)}
 .card{background:#fff;border:1px solid #e5ecfb;border-radius:14px;padding:14px}.form{display:grid;gap:10px;max-width:520px}input,textarea,select{border:1px solid #d2ddf5;border-radius:10px;padding:10px;font:inherit}
 .footer-light{background:#fff;margin-top:30px;border-top:1px solid #e8edf8;padding:20px 0}.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}.foot-grid a{display:block;text-decoration:none;color:#43506b;margin:6px 0}.logo.dark{color:#111a2e}.copy{margin-top:8px;color:#7b8498;font-size:.92rem}
-.admin-page .card{margin:14px 0}.rowBtns{display:flex;gap:10px;flex-wrap:wrap}
-@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.search-bar{grid-template-columns:1fr 1fr}.hot-grid{grid-template-columns:1fr 1fr}.countries{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){nav{display:none}.search-bar{grid-template-columns:1fr}.hot-grid,.countries,.foot-grid,.promo-grid{grid-template-columns:1fr}}
+.admin-page{background:#eef2f8}
+.admin-wrap{max-width:1200px;padding-bottom:26px}
+.admin-card{padding:20px 22px}
+.admin-grid{display:grid;gap:12px;margin-bottom:10px}
+.admin-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.admin-grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.admin-grid.cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.admin-page label{display:flex;flex-direction:column;gap:6px;font-weight:600;color:#30415f}
+.admin-page input,.admin-page textarea{width:100%}
+.json-area{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;min-height:190px;resize:vertical}
+.rowBtns{display:flex;gap:10px;flex-wrap:wrap}
+.sticky-actions{position:sticky;bottom:8px;background:rgba(255,255,255,.92);padding:10px;border:1px solid #dce6fb;border-radius:12px}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.search-bar{grid-template-columns:1fr 1fr}.hot-grid{grid-template-columns:1fr 1fr}.countries{grid-template-columns:1fr 1fr}.admin-grid.cols-4,.admin-grid.cols-5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){nav{display:none}.search-bar{grid-template-columns:1fr}.hot-grid,.countries,.foot-grid,.promo-grid{grid-template-columns:1fr}.admin-grid.cols-2,.admin-grid.cols-4,.admin-grid.cols-5{grid-template-columns:1fr}}
