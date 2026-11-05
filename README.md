@@ -9,11 +9,14 @@ Open:
 - Site: `http://localhost:3010/`
 - Admin: `http://localhost:3010/admin`
 
-## Default admin login
-- Username: `admin`
-- Password: `Monotours24!ChangeMe`
+## Admin login
+Required environment variables:
+- `SESSION_SECRET` — at least 32 random characters (the server refuses to start without it).
+- `ADMIN_PASSWORD` — optional, at least 12 characters, used only when `data/users.json` does not exist yet.
+  Without it a random initial password is generated and printed once in the server log.
 
-⚠️ Change password immediately in admin panel.
+Username: `admin`. Change the password in the admin panel after the first login.
+`data/users.json` is created at first start and is not committed (see `.gitignore`).
 
 ## What you can manage in admin
 - Site name, tagline, logo text, favicon text/icon

@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs';
 import fs from 'fs-extra';
 import nodemailer from 'nodemailer';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -18,14 +19,31 @@ const LEADS_FILE = path.join(DATA_DIR, 'leads.json');
 
 await fs.ensureDir(DATA_DIR);
 if (!(await fs.pathExists(LEADS_FILE))) await fs.writeJson(LEADS_FILE, []);
+// Session secret is required: without it anyone could forge an admin session cookie.
+const SESSION_SECRET = process.env.SESSION_SECRET || '';
+if (SESSION_SECRET.length < 32) {
+  console.error('SESSION_SECRET must be set (at least 32 random characters). Refusing to start.');
+  process.exit(1);
+}
+// First start: the admin password comes from ADMIN_PASSWORD or is generated randomly and printed once.
+// There is no default password any more; data/users.json is not part of the repository.
 if (!(await fs.pathExists(USERS_FILE))) {
-  const hash = await bcrypt.hash('Monotours24!ChangeMe', 10);
-  await fs.writeJson(USERS_FILE, { username: 'admin', passwordHash: hash });
+  let initial = process.env.ADMIN_PASSWORD || '';
+  if (initial && initial.length < 12) {
+    console.error('ADMIN_PASSWORD must have at least 12 characters. Refusing to start.');
+    process.exit(1);
+  }
+  if (!initial) {
+    initial = crypto.randomBytes(18).toString('base64url');
+    console.log(`Initial admin login (shown once, change it in the admin panel): admin / ${initial}`);
+  }
+  const hash = await bcrypt.hash(initial, 10);
+  await fs.writeJson(USERS_FILE, { username: 'admin', passwordHash: hash }, { mode: 0o600 });
 }
 
 app.use(express.json({ limit: '20mb' }));
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'change-this-secret',
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: { httpOnly: true, maxAge: 1000 * 60 * 60 * 8 }
@@ -111,5 +129,4 @@ app.post('/api/public/contact', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Monotours24 CMS running on http://localhost:${PORT}`);
-  console.log('Default admin login: admin / Monotours24!ChangeMe (change immediately)');
 });
